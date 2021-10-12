@@ -1,0 +1,89 @@
+.divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+.divider-text span {
+    padding: 7px;
+    font-size: 20px;
+    position: relative;   
+    z-index: 2;
+}
+.divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid  rgb(153, 10, 122);
+    top: 55%;
+    left: 0;
+    z-index: 1;
+}
+.container{
+    margin-top:5px;
+    color: rgb(153, 10, 122);
+    max-width: 566px;
+    border width: 300px;
+    max-height:900px;
+}
+.card-body mx-auto{
+
+    margin-top: 15px;
+padding-top: 15px;
+    background-color: rgb(153, 10, 122);
+    color: rgb(153, 10, 122);
+    max-width: 566px;
+    border width: 300px;
+    max-height:300px;
+
+}
+.card {
+
+    background-clip: border-box;
+    border: 15px solid rgb(153, 10, 122);;
+    border-radius: 4.25rem;
+}
+.text-center{
+
+
+    font-family: "Lucida Calligraphy";
+    font-weight: bold;
+    font-size:20px;
+
+
+}
+.btn-primary {
+    color: #fff;
+    background-color:  rgb(153, 10, 122);
+    border-color:  rgb(153, 10, 122);
+}
+.btn-primary:hover {
+    color:   rgb(153, 10, 122);
+    background-color:black;
+    border-color:black;
+}
+.form-group input-group:hover{
+
+    color:  #FBC;
+    background-color:black;
+    border-color:black;
+
+}
+.input-group-text {
+    
+    color: rgb(153, 10, 122);
+}
+.input:-internal-autofill-selected {
+    background-color: rgb(232, 240, 254) ;
+    background-color: rgb(232, 240, 254);
+}
+a {
+    color: black;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+.input[type="checkbox" i] {
+    background-color: black;
+
+}
