@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Cart;
 
 class UserController extends Controller
 {
@@ -16,7 +17,9 @@ class UserController extends Controller
      */
 
     public function index()
-    {
+    { 
+        
+        
         
         $users = User::get();
         return response()->json(['users' => $users], 200);
@@ -108,9 +111,10 @@ class UserController extends Controller
     }
     public function login(Request $request)
     {
+        $user_id = Auth::id();
         $user= User::where('email', $request->email)->first();
-        // print_r($data);
-        // dd($user);
+        $cart = Cart::where('user_id', $user_id)->get();
+        $count = Cart::where('user_id', $user_id)->count();
         if (!$user || !Hash::check($request->password, $user->password)) {
             return response([
                 'message' => ['These credentials do not match our records.']
@@ -121,7 +125,9 @@ class UserController extends Controller
 
         $response = [
             'user' => $user,
-            'token' => $token
+            'token' => $token,
+            'cart'=>$cart,
+            'count'=>$count
         ];
 
         return response($response);
